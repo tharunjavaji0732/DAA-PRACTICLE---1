@@ -1,0 +1,24 @@
+# Quick Sort in Python
+
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+
+    pivot = arr[len(arr) // 2]  # Choose the middle element as pivot
+
+    # Divide the array into three parts
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+
+    # Recursively sort left and right parts
+    return quick_sort(left) + middle + quick_sort(right)
+
+# Driver code
+arr = [10, 7, 8, 9, 1, 5]
+
+print("Original Array:", arr)
+
+sorted_arr = quick_sort(arr)
+
+print("Sorted Array:", sorted_arr)
